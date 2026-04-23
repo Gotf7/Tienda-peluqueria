@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wendy HairExtensions | Haute Coiffure</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        :root {
+            --beauty-cream: #fdfbf7;
+            --beauty-deep: #1a1a1a;
+            --beauty-gold: #d4af37; /* Rose Gold/Oro suave */
+            --accent-soft: #f8edeb;
+        }
+
+        /* CORRECCIÓN 1: Bloqueo estricto del ancho de la página */
+        html, body { 
+            background-color: var(--beauty-cream); 
+            color: var(--beauty-deep);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+        }
+
+        .brand-logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 3.2rem;
+            color: var(--beauty-deep);
+            letter-spacing: -1px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .brand-logo i { color: var(--beauty-gold); font-style: italic; }
+
+        .search-wrapper {
+            max-width: 480px;
+            margin: 30px auto 0;
+            padding: 0 15px;
+        }
+
+        #buscador {
+            background: #ffffff;
+            border: 1px solid var(--beauty-gold);
+            border-radius: 30px;
+            color: var(--beauty-deep);
+            padding: 15px 25px;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        #buscador:focus {
+            box-shadow: 0 0 15px rgba(211, 175, 55, 0.3);
+            border-color: var(--beauty-gold);
+        }
+
+        /* Tarjetas de Colección Dinámicas */
+        .col-card {
+            background: #ffffff;
+            border-radius: 0; 
+            border: none;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .img-wrapper {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .col-img {
+            max-height: 100%;
+            width: auto;
+            object-fit: contain;
+            transition: 0.8s;
+        }
+
+        .col-card:hover .col-img { transform: scale(1.06); }
+
+        .col-card-body { padding: 30px 20px; }
+
+        .col-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--beauty-deep);
+            margin-bottom: 15px;
+        }
+
+        .btn-beauty { 
+            background: var(--beauty-deep);
+            color: #ffffff;
+            border: none; 
+            font-weight: 700; 
+            border-radius: 0;
+            padding: 12px 25px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .btn-beauty:hover {
+            background: var(--beauty-gold);
+            color: #ffffff;
+            letter-spacing: 3px;
+        }
+
+        footer { 
+            margin-top: 80px; 
+            padding: 60px 20px; 
+            background: #ffffff;
+            text-align: center;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        footer p { color: var(--beauty-deep); font-size: 0.9rem; }
+        footer strong { color: var(--beauty-gold); font-family: 'Playfair Display', serif; }
+
+        /* CORRECCIÓN 2: Ajustes responsivos para celulares */
+        @media (max-width: 768px) {
+            .brand-logo {
+                font-size: 2.1rem; /* Reduce el tamaño de la letra en móviles */
+                word-wrap: break-word; /* Evita que palabras largas rompan el diseño */
+            }
+            header {
+                padding: 50px 15px; /* Reduce un poco el espacio superior en móviles */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header data-aos="fade-down">
+        <h1 class="brand-logo">Wendy <i>Hair</i>Extensions</h1>
+        <p class="text-muted" style="letter-spacing: 1px;">Colecciones Exclusivas de Cuidado Capilar</p>
+        <div class="search-wrapper" data-aos="zoom-in" data-aos-delay="300">
+            <input type="text" id="buscador" class="form-control" placeholder="🔍 ¿Qué necesita tu cabello hoy?">
+        </div>
+    </header>
+
+    <div class="container mt-5">
+        <div class="row row-cols-1 row-cols-md-2 g-5" id="lista-colecciones">
+            {% for c in colecciones %}
+            <div class="col coleccion-item" data-aos="fade-up">
+                <div class="card col-card shadow-lg" onclick="location.href='/coleccion/{{c.id}}'">
+                    <div class="img-wrapper d-flex align-items-center justify-content-center">
+                        <img src="/static/{{c.img}}" class="col-img">
+                    </div>
+                    <div class="col-card-body text-center d-flex flex-column justify-content-between">
+                        <div>
+                            <h6 class="col-title">{{c.nombre}}</h6>
+                            <p class="small text-muted mb-4">{{c.desc}}</p>
+                        </div>
+                        <button class="btn btn-beauty w-100">Explorar Línea</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <footer>
+        <p>⚡ <strong>Wendy Hair Extensions</strong> © 2026</p>
+        <p>📍 La Habana, Cuba | 📞 Consultas de Glamour: +53 63699206</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // Buscador Dinámico Fluido
+        document.getElementById('buscador').addEventListener('input', function(e) {
+            let filtro = e.target.value.toLowerCase();
+            document.querySelectorAll('.coleccion-item').forEach(prod => {
+                let nombre = prod.querySelector('.col-title').innerText.toLowerCase();
+                prod.style.display = nombre.includes(filtro) ? "block" : "none";
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

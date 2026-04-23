@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wendy Hair - Líneas Exclusivas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #fcfcfc; font-family: 'Segoe UI', sans-serif; }
+        .hero { text-align: center; padding: 60px 0; background: white; margin-bottom: 30px; }
+        .card-linea { border: none; transition: transform 0.3s; cursor: pointer; border-radius: 15px; overflow: hidden; }
+        .card-linea:hover { transform: translateY(-10px); }
+        .card-linea img { height: 400px; object-fit: cover; }
+        .btn-ver { background: #000; color: #fff; border-radius: 0; width: 100%; padding: 12px; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1 class="fw-bold text-uppercase italic">Wendy Hair</h1>
+        <p class="text-muted">Selecciona una línea para ver los productos</p>
+    </div>
+    <div class="container">
+        <div class="row g-4">
+            {% for c in colecciones %}
+            <div class="col-md-6">
+                <div class="card card-linea shadow-sm" onclick="location.href='/coleccion/{{c.id}}'">
+                    <img src="/static/{{c.img}}" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h3 class="h5 text-uppercase mb-3">{{c.nombre}}</h3>
+                        <button class="btn btn-ver">VER PRODUCTOS INDIVIDUALES</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

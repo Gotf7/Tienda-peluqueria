@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wendy Hair | Detalle Glam de {{p.nombre}}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --beauty-cream: #fdfbf7;
+            --beauty-deep: #1a1a1a;
+            --beauty-gold: #d4af37;
+            --accent-pink: #f8edeb;
+        }
+
+        body { 
+            background-color: var(--beauty-cream); 
+            color: var(--beauty-deep);
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 80px;
+        }
+
+        .product-img { 
+            width: 100%; 
+            border-radius: 15px; 
+            max-height: 400px; 
+            object-fit: contain;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            background: #ffffff;
+            padding: 20px;
+        }
+
+        .btn-buy-wa { 
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            border: none;
+            color: white; 
+            font-weight: 700; 
+            border-radius: 0;
+            padding: 16px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .btn-buy-wa:hover {
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+            transform: scale(1.03);
+            color: white;
+        }
+
+        .detail-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .pulse-effect { animation: pulse 2s infinite; }
+    </style>
+</head>
+<body class="bg-light">
+<div class="container py-5">
+    <a href="javascript:history.back()" class="text-dark mb-5 d-inline-block text-decoration-none small">← Volver a Línea</a>
+    <div class="row g-5 align-items-center">
+        <div class="col-md-6 text-center">
+            <img src="/static/{{p.img}}" class="product-img img-fluid shadow-sm">
+        </div>
+        <div class="col-md-6">
+            <div class="detail-card shadow-lg">
+                <h1 class="font-serif fw-bold mb-3" style="font-family: 'Playfair Display', serif; font-size: 2.2rem;">{{ p.nombre }}</h1>
+                <p class="text-muted text-uppercase mb-4" style="letter-spacing: 2px; font-size: 0.75rem;">Wendy Hair Professional Care</p>
+                <h2 class="text-gold my-4" style="color: var(--beauty-gold); font-family: 'Poppins'; font-weight: 700; font-size: 2rem;">{{ p.precio }}</h2>
+                
+                <div class="mb-5 p-3" style="background: rgba(255,255,255,0.05); border-left: 4px solid var(--beauty-gold); border-radius: 13px;">
+                    <p class="small mb-0">{{ p.detalle }}</p>
+                </div>
+                
+                <hr style="border-top: 1px solid rgba(0,0,0,0.1);">
+                <a href="https://wa.me/5363699206?text=Hola Wendy Hair! Me interesa el producto: {{ p.nombre }}" class="btn btn-buy-wa w-100 py-3 mt-3 pulse-effect">
+                    COMPRAR POR WHATSAPP PRO
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="text-center py-5 mt-5">
+    <p class="small text-muted mb-1">Entregas Glam en La Habana | +53 63699206</p>
+    <p style="font-family: 'Playfair Display'; font-style: italic; color: var(--beauty-gold);">Su cabello, nuestra obra de arte.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
