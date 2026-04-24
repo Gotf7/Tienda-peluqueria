@@ -25,7 +25,14 @@ colecciones = [
     {"id":"Crema-Desrizadora o Alisadora"
     "nombre": "Nevada Super Crema No-Lye Relaxer"
     "img":"Derriz Nevada.jpg"
-    "desc":"Nevada Super Crema No-Lye Relaxer, un kit de desrizado o alisado"
+    "desc":"""Nevada Super Crema No-Lye Relaxer, un kit de desrizado o alisado, para el cabello en dos pasos enriquecido con vitamina E. Está diseñado para transformar cabellos rizados o crespos en melenas lisas y manejables directamente en casa. 
+
+Detalles del producto
+Contenido del kit: Incluye dos sobres numerados: el Paso 1 (Activator Cream) y el Paso 2 (Relaxer Cream).
+
+Fórmula: Es una fórmula sin lejía (no-lye), lo que suele ser más suave para el cuero cabelludo que los desrizadores tradicionales. Contiene vitamina E para nutrir y acondicionar el cabello durante el proceso.
+
+Beneficios: Promete un alisado de larga duración, aportando brillo y suavidad."""
     }
 ]
 
