@@ -5,22 +5,27 @@ app = Flask(__name__)
 # Definición de Colecciones (Las portadas principales)
 colecciones = [
     {
-        "id": "skala-experto", 
+        "id": "Skala-Experto", 
         "nombre": "LÍNEA SKALA EXPERTO", 
         "img": "ColecciónSkala.png", 
         "desc": "Tratamientos intensivos brasileños para cada tipo de hebra."
     },
     {
-        "id": "linea-oro-revitalizante", 
+        "id": "Linea-Oro-Revitalizante", 
         "nombre": "LÍNEA DE ORO PROFESSIONAL", 
         "img": "Colección Nazca Origem.png", 
         "desc": "Nutrición extrema y reparación profunda para cabellos procesados."
     },
     {
-        "id": "cuidado-diario", 
+        "id": "Cuidado-diario", 
         "nombre": "BRILLO Y CUIDADO DIARIO", 
         "img": "Colección Nevada _Nazca Origem-1kg.jpg", 
         "desc": "Mantenimiento esencial para un cabello radiante todos los días."
+    },
+    {"id":"Crema-Desrizadora o Alisadora"
+    "nombre": "Nevada Super Crema No-Lye Relaxer"
+    "img":"Derriz Nevada.jpg"
+    "desc":"Nevada Super Crema No-Lye Relaxer, un kit de desrizado o alisado"
     }
 ]
 
