@@ -51,7 +51,7 @@ productos = [
     {"id": 12, "col_id": "cuidado-diario", "nombre": "Nevada Cachos Perfectos", "precio": "$3500 CUP", "img": "Nevada Cachos Perfectos.jpg", "detalle": "Nevada Cachos Perfeitos (3 en 1)..."},
 
     # --- COLECCIÓN DESRIZADORA ---
-    {"id": 13, "col_id": "crema-desrizadora-o-alisadora", "nombre": "Nevada Super Crema No-Lye Relaxer", "precio": "$1400 CUP", "img": "Derriz Nevada.png", "detalle": "Kit de desrizado enriquecido con vitamina E..."}
+    {"id": 13, "col_id": "crema-desrizadora-o-alisadora", "nombre": "Nevada Super Crema No-Lye Relaxer", "precio": "$1400 CUP", "img": "Derriz Nevada1.png", "detalle": "Kit de desrizado enriquecido con vitamina E..."}
 ]
 
 @app.route('/')
