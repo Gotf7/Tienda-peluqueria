@@ -18,7 +18,8 @@ colecciones = [
         "img": "Colección Nevada _Nazca Origem-1kg.jpg", 
         "desc": "Mantenimiento esencial para un cabello radiante todos los días."
     },
-    {"id":"Crema-Desrizadora-o-Alisadora",
+    {
+      "id":"Crema-Desrizadora-o-Alisadora",
     "nombre": "Nevada Super Crema No-Lye Relaxer",
     "img":"Derriz Nevada.jpg",
     "desc":"""Nevada Super Crema No-Lye Relaxer, un kit de desrizado o alisado, para el cabello en dos pasos enriquecido con vitamina E. Está diseñado para transformar cabellos rizados o crespos en melenas lisas y manejables directamente en casa. 
@@ -204,7 +205,18 @@ Tratamiento multifuncional diseñado para nutrir, regenerar y definir rizos u on
 
 ​Fórmula: Vegana, sin sulfatos, petrolatos ni parabenos.
 
-​En resumen: Una solución completa para mantener los rizos elásticos, hidratados y perfectamente definidos."""}
+​En resumen: Una solución completa para mantener los rizos elásticos, hidratados y perfectamente definidos."""},
+{"id": 13, "col_id": "Crema-Desrizadora-o-Alisadora", "precio":"$1400cup"
+    "nombre": "Nevada Super Crema No-Lye Relaxer",
+    "img":"Derriz Nevada.jpg",
+    "detalle": """Nevada Super Crema No-Lye Relaxer, un kit de desrizado o alisado, para el cabello en dos pasos enriquecido con vitamina E. Está diseñado para transformar cabellos rizados o crespos en melenas lisas y manejables directamente en casa. 
+
+Detalles del producto
+Contenido del kit: Incluye dos sobres numerados: el Paso 1 (Activator Cream) y el Paso 2 (Relaxer Cream).
+
+Fórmula: Es una fórmula sin lejía (no-lye), lo que suele ser más suave para el cuero cabelludo que los desrizadores tradicionales. Contiene vitamina E para nutrir y acondicionar el cabello durante el proceso.
+
+Beneficios: Promete un alisado de larga duración, aportando brillo y suavidad."""}
 ]
 
 @app.route('/')
