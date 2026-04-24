@@ -26,7 +26,7 @@ colecciones = [
     {
         "id": "crema-desrizadora-o-alisadora",
         "nombre": "CREMA DESRIZADORA",
-        "img": "Derriz Nevada.jpg",
+        "img": "1777016240219.png",
         "desc": "Kit de desrizado o alisado para un cabello liso, brillante y suave."
     }
 ]
