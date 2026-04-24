@@ -15,16 +15,12 @@ colecciones = [
         "nombre": "LÍNEA DE ORO PROFESSIONAL", 
         "img": "Colección Nazca Origem.png", 
         "desc": "Nutrición extrema y reparación profunda para cabellos procesados."
-    },
-    {
-        "id": "Cuidado-diario", 
-        "nombre": "BRILLO Y CUIDADO DIARIO", 
         "img": "Colección Nevada _Nazca Origem-1kg.jpg", 
         "desc": "Mantenimiento esencial para un cabello radiante todos los días."
     },
-    {"id":"Crema-Desrizadora-o-Alisadora"
-    "nombre": "Nevada Super Crema No-Lye Relaxer"
-    "img":"Derriz Nevada.jpg"
+    {"id":"Crema-Desrizadora-o-Alisadora",
+    "nombre": "Nevada Super Crema No-Lye Relaxer",
+    "img":"Derriz Nevada.jpg",
     "desc":"""Nevada Super Crema No-Lye Relaxer, un kit de desrizado o alisado, para el cabello en dos pasos enriquecido con vitamina E. Está diseñado para transformar cabellos rizados o crespos en melenas lisas y manejables directamente en casa. 
 
 Detalles del producto
@@ -33,8 +29,8 @@ Contenido del kit: Incluye dos sobres numerados: el Paso 1 (Activator Cream) y e
 Fórmula: Es una fórmula sin lejía (no-lye), lo que suele ser más suave para el cuero cabelludo que los desrizadores tradicionales. Contiene vitamina E para nutrir y acondicionar el cabello durante el proceso.
 
 Beneficios: Promete un alisado de larga duración, aportando brillo y suavidad."""
-    }
-
+    },
+]
 
 # Base de datos detallada de Productos
 productos = [
