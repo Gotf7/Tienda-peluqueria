@@ -34,11 +34,81 @@ colecciones = [
 # --- BASE DE DATOS DE PRODUCTOS ---
 productos = [
     # --- COLECCIÓN SKALA EXPERTO ---
-    {"id": 1, "col_id": "skala-experto", "nombre": "Skala Moranco", "precio": "$3500 CUP", "img": "Skala Moranco.jpg", "detalle": "Skala Frutástica Morango (1kg)..."},
-    {"id": 2, "col_id": "skala-experto", "nombre": "Skala Melancia", "precio": "$3500 CUP", "img": "Skala Melancia.jpg", "detalle": "Skala Frutástica Melancia (1kg)..."},
-    {"id": 3, "col_id": "skala-experto", "nombre": "Skala Maracujá", "precio": "$3500 CUP", "img": "Skala Maracujá.jpg", "detalle": "Skala Maracuyá y Patauá (1kg)..."},
-    {"id": 4, "col_id": "skala-experto", "nombre": "Skala Coquetel de Frutas", "precio": "$3500 CUP", "img": "Skala Coquetel de Frutas.jpg", "detalle": "Skala Coquetel de Frutas (1kg)..."},
-    {"id": 5, "col_id": "skala-experto", "nombre": "Skala Coconut", "precio": "$3500 CUP", "img": "Skala Coconut.jpg", "detalle": "Skala Frutástica Coconut (1kg)..."},
+    {"id": 1, "col_id": "skala-experto", "nombre": "Skala Moranco", "precio": "$3500 CUP", "img": "Skala Moranco.jpg", "detalle": """Skala Frutástica Morango (1kg)
+
+​La Skala Morango es una crema vegana y multifuncional diseñada para transformar cabellos secos y con frizz en melenas vibrantes y nutridas. Su fórmula destaca por ser 'limpia'(apta para Low Poo) y extremadamente versátil.
+
+​Lo que la hace especial
+
+​Ingredientes Clave: Extracto de fresa y aceite de oliva (el combo perfecto para recuperar lípidos y vitalidad).
+
+​Beneficios Directos: Aporta brillo espejo, suavidad extrema y un aroma frutal duradero.
+
+​Fórmula Ética: 100% vegana, libre de sulfatos, parabenos, siliconas y aceites minerales.
+
+​Un producto, tres funciones
+
+​Puedes aprovechar su envase de 1kg de tres maneras distintas según tu tiempo y necesidad:
+
+​Acondicionador Rápido: Actúa en 3 minutos para desenredar y suavizar a diario.
+
+​Mascarilla Nutritiva: Actúa en 20 minutos para una reparación profunda (con enjuague).
+
+​Crema para Peinar: Uso sin enjuague para definir, controlar el volumen y eliminar el frizz durante el día.
+
+​En resumen: Es la opción ideal si buscas un producto económico, de gran tamaño y con ingredientes naturales para devolverle la vida a tu cabello de forma saludable."""},
+    {"id": 2, "col_id": "skala-experto", "nombre": "Skala Melancia", "precio": "$3500 CUP", "img": "Skala Melancia.jpg", "detalle": """Skala Frutástica Melancia (1kg)
+Es una crema vegana '2 en 1' diseñada para la etapa de Nutrición. Su objetivo principal es ofrecer una ultra definición de hasta 72 horas en cabellos rizados, crespos o muy secos.
+​Lo esencial
+​Ingredientes pro: Aceite de sandía, argán y vitaminas A y C.
+​Acción: Repone lípidos, elimina el frizz y fortalece la fibra capilar.
+​Fórmula Limpia: Sin siliconas, parabenos ni petrolatos (apta para técnica No/Low Poo).
+​Versatilidad total
+​Tratamiento: Como mascarilla rápida (3 min) o intensiva (15 min).
+​Finalizador: Como crema para peinar sin enjuague para definir rizos.
+​Limpieza: Funciona como Co-wash o pre-shampoo para proteger las puntas.
+​En una frase: El 'potão' ideal para quienes buscan rizos definidos, nutridos y con brillo espejo durante días."""},
+    {"id": 3, "col_id": "skala-experto", "nombre": "Skala Maracujá", "precio": "$3500 CUP", "img": "Skala Maracujá.jpg", "detalle": """Skala Maracuyá y Patauá (1kg)
+
+Crema vegana enfocada en nutrición, fuerza y crecimiento.
+
+​Objetivo: Fortalecer la hebra y acelerar el crecimiento del cabello débil o estancado.
+
+​Ingrediente clave: Aceite de Patauá (aporta lípidos y vitalidad).
+
+​Versatilidad: Funciona como mascarilla, crema de peinar, co-wash o pre-shampoo.
+
+​Fórmula: 100% 'limpia' (sin sulfatos, siliconas ni parabenos).
+
+​En resumen: Nutrición amazónica para rescatar cabellos débiles y estimular su largo."""},
+    {"id": 4, "col_id": "skala-experto", "nombre": "Skala Coquetel de Frutas", "precio": "$3500 CUP", "img": "Skala Coquetel de Frutas.jpg", "detalle": """Skala Coquetel de Frutas (1kg)
+
+Crema multifuncional 2 en 1 diseñada para la hidratación y suavidad diaria de todo tipo de cabello, incluyendo el de los niños.
+
+​Ingredientes clave: Agua de coco, piña (vitaminas A, B y C) y mora.
+
+​Beneficios: Ultra desenredante (sin tirones), elimina el frizz y devuelve el brillo al cabello opaco.
+
+​Versatilidad: Úsala como acondicionador, mascarilla, crema de peinar, co-wash o pre-poo.
+
+​Fórmula: 100% vegana y 'liberada' (sin sulfatos, siliconas ni parabenos).
+
+​En resumen: La solución familiar ideal para un cabello hidratado, brillante y fácil de peinar.
+
+"""},
+    {"id": 5, "col_id": "skala-experto", "nombre": "Skala Coconut", "precio": "$3500 CUP", "img": "Skala Coconut.jpg", "detalle": """Skala Frutástica Coconut (1kg)
+
+Crema vegana 2 en 1 diseñada para la nutrición y revitalización de cabellos secos y frágiles.
+
+​Ingredientes clave: Aceite de coco, manteca de murumuru y karité.
+
+​Beneficios: Hidratación profunda, brillo natural y control de frizz sin pesadez.
+
+​Multifunción: Mascarilla (3-15 min), crema de peinar (sin enjuague), co-wash o pre-shampoo.
+
+​Fórmula: 100% 'limpia' (sin sulfatos, siliconas ni petrolatos).
+
+​En resumen: Un rescate nutritivo a base de coco para devolverle la elasticidad y el brillo al cabello deshidratado."""},
 
     # --- COLECCIÓN LÍNEA DE ORO ---
     {"id": 7, "col_id": "linea-oro-revitalizante", "nombre": "Nazca Origem Babosa 400g", "precio": "$1500 CUP", "img": "Nazca OrigemBabosa.jpg", "detalle": "Nazca Origem Babosa (1kg)..."},
