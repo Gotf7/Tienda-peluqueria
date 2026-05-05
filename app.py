@@ -116,9 +116,61 @@ Crema vegana 2 en 1 diseñada para la nutrición y revitalización de cabellos s
     {"id": 9, "col_id": "linea-oro-revitalizante", "nombre": "Nazca Origem Crespos", "precio": "$1500 CUP", "img": "Nazca Origem Crespos.jpg", "detalle": "Nazca Origem Crespos (1kg)..."},
     
     # --- COLECCIÓN CUIDADO DIARIO ---
-    {"id": 10, "col_id": "cuidado-diario", "nombre": "Nazca Origem Onduladas", "precio": "$3500 CUP", "img": "Nazca Origem-1kg.jpg", "detalle": "Origem Eu Escolho Cachos - Onduladas (1kg)..."},
-    {"id": 11, "col_id": "cuidado-diario", "nombre": "Nevada S.O.S", "precio": "$3500 CUP", "img": "Nevada S.O.S.jpg", "detalle": "Nevada S.O.S. Crecimiento (3 en 1)..."},
-    {"id": 12, "col_id": "cuidado-diario", "nombre": "Nevada Cachos Perfectos", "precio": "$3500 CUP", "img": "Nevada Cachos Perfectos.jpg", "detalle": "Nevada Cachos Perfeitos (3 en 1)..."},
+    {"id": 10, "col_id": "cuidado-diario", "nombre": "Nazca Origem Onduladas", "precio": "$3500 CUP", "img": "Nazca Origem-1kg.jpg", "detalle": """Origem Eu Escolho Cachos - Onduladas (1kg)
+Crema de peinado ligera diseñada específicamente para ondas (tipos 2ABC) que buscan definición y movimiento natural sin pesadez.
+​Trío Poderoso: Enriquecida con aceites de Coco, Karité y Argán para brillo, hidratación y reparación de puntas.
+​Escudo Protector: Incluye protección solar contra rayos UV y agentes contaminantes.
+​Fórmula 'Liberada': 100% vegana, sin siliconas, sulfatos ni petrolatos (apta para Low/No Poo).
+​Modo de uso: Aplicar sobre cabello húmedo o seco y estilizar (ideal para técnica scrunch). Sin enjuague.
+​Guía rápida de la línea Nazca Origem:
+​Amarillo (Onduladas): Nutrición ligera y movimiento (el producto actual).
+​Verde (Cacheadas): Definición y volumen para rizos medios.
+​Rojo (Crespos): Nutrición intensa para rizos cerrados o afro.
+​En resumen: El aliado perfecto para ondas definidas, protegidas del sol y con cero encrespamiento."""},
+    {"id": 11, "col_id": "cuidado-diario", "nombre": "Nevada S.O.S", "precio": "$3500 CUP", "img": "Nevada S.O.S.jpg", "detalle": """Nevada S.O.S. Crecimiento (3 en 1)
+
+Tratamiento intensivo de fórmula brasileña diseñado para frenar la caída y fortalecer cabellos delgados o frágiles.
+
+​Ingredientes clave: Biotina y Aceite de semilla de café (estimulan el folículo y regeneran la fibra).
+
+​Beneficios: Aumenta la densidad capilar, reduce la rotura y promueve un crecimiento saludable.
+
+​3 Modos de uso: 
+
+​Pre-lavado: Protección previa al champú (3-15 min).
+
+​Mascarilla: Hidratación profunda con enjuague (15 min).
+
+​Crema de peinar: Finalizador sin enjuague para uso diario.
+
+​Fórmula: 100% vegana, sin sal, sulfatos, parabenos ni petrolatos.
+
+​Compatibilidad: Apta para todo tipo de cabello, incluso procesados o teñidos.
+
+​En resumen: Un potente complejo vitamínico de 1kg para recuperar la fuerza y estimular el largo de tu melena.
+
+"""},
+    {"id": 12, "col_id": "cuidado-diario", "nombre": "Nevada Cachos Perfectos", "precio": "$3500 CUP", "img": "Nevada Cachos Perfectos.jpg", "detalle": """Nevada Cachos Perfeitos (3 en 1)
+
+Tratamiento multifuncional diseñado para nutrir, regenerar y definir rizos u ondas (tipos 2ABC a 3A).
+
+​Ingredientes clave: Aloe Vera (hidratación y elasticidad) y Aceite de Semilla de Algodón (brillo y nutrición).
+
+​Efecto: Sella cutículas, desenreda con facilidad y aporta un movimiento natural sin frizz.
+
+​3 Modos de uso: 
+
+​Pre-Lavado: Protege las puntas (3 min antes del champú).
+
+​Mascarilla: Tratamiento intensivo (15 min con enjuague).
+
+​Crema de peinar: Definición y control diario (sin enjuague).
+
+​Fórmula: Vegana, sin sulfatos, petrolatos ni parabenos.
+
+​En resumen: Una solución completa para mantener los rizos elásticos, hidratados y perfectamente definidos.
+
+"""},
 
     # --- COLECCIÓN DESRIZADORA ---
     {"id": 13, "col_id": "crema-desrizadora-o-alisadora", "nombre": "Nevada Super Crema No-Lye Relaxer", "precio": "$1400 CUP", "img": "Derriz Nevada1.png", "detalle": "Kit de desrizado enriquecido con vitamina E..."}
