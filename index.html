@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wendy Hair Extensions | Haute Coiffure</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        :root { --beauty-cream: #fdfbf7; --beauty-deep: #1a1a1a; --beauty-gold: #d4af37; --accent-soft: #f8edeb; }
+        #loader-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--beauty-cream); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 10000; transition: 0.6s; }
+        .loader { width: 50px; height: 50px; border: 3px solid rgba(212, 175, 55, 0.2); border-top: 3px solid var(--beauty-gold); border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .loader-hidden { opacity: 0; visibility: hidden; }
+        body { background-color: var(--beauty-cream); color: var(--beauty-deep); font-family: 'Poppins', sans-serif; overflow-x: hidden; }
+        header { background: #ffffff; padding: 60px 20px; text-align: center; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
+        .brand-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 2.8rem; text-transform: uppercase; }
+        .brand-logo i { color: var(--beauty-gold); }
+        .search-wrapper { max-width: 480px; margin: 30px auto 0; }
+        #buscador { border: 1px solid var(--beauty-gold); border-radius: 30px; padding: 12px 25px; }
+        .col-card { background: #ffffff; border: none; transition: 0.4s; cursor: pointer; height: 100%; }
+        .col-card:hover { transform: translateY(-10px); }
+        .img-wrapper { height: 300px; overflow: hidden; background: white; display: flex; align-items: center; justify-content: center; padding: 15px; }
+        .col-img { max-height: 100%; width: auto; object-fit: contain; }
+        .btn-beauty { background: var(--beauty-deep); color: white; border-radius: 0; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; padding: 12px; transition: 0.3s; }
+        .btn-beauty:hover { background: var(--beauty-gold); color: white; }
+        .precio-tag { color: var(--beauty-gold); font-weight: 700; font-size: 1.2rem; }
+        .modal-content { background-color: var(--beauty-cream); border-radius: 20px; border: 1px solid var(--beauty-gold); }
+        .back-btn { cursor: pointer; color: var(--beauty-gold); font-weight: 600; display: none; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div id="loader-wrapper"><div class="loader"></div><div class="mt-3 small">WENDY HAIR</div></div>
+
+    <header>
+        <h1 class="brand-logo">Wendy <i>Hair</i></h1>
+        <p class="text-muted small">Colecciones Exclusivas de Cuidado Capilar</p>
+        <div class="search-wrapper"><input type="text" id="buscador" class="form-control" placeholder="🔍 ¿Qué necesita tu cabello hoy?"></div>
+    </header>
+
+    <div class="container mt-5">
+        <div id="btn-regresar" class="back-btn" onclick="mostrarColecciones()">← Volver a Colecciones</div>
+        <h3 id="seccion-titulo" class="text-center mb-5 text-uppercase small" style="letter-spacing: 3px;">Nuestras Líneas</h3>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="contenedor-principal"></div>
+    </div>
+
+    <footer class="text-center py-5 mt-5 border-top">
+        <p>⚡ <strong>Wendy Hair Extensions</strong> © 2026</p>
+        <p class="small">📍 La Habana, Cuba | 📞 +53 63699206</p>
+    </footer>
+
+    <!-- MODAL PARA DETALLES -->
+    <div class="modal fade" id="modalProducto" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4 text-center">
+                <div class="modal-header border-0"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div id="modal-body-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const colecciones = [
+            { id: "skala-experto", nombre: "LÍNEA SKALA EXPERTO", img: "ColecciónSkala.png", desc: "Tratamientos intensivos brasileños." },
+            { id: "linea-oro-revitalizante", nombre: "LÍNEA DE ORO PROFESSIONAL", img: "Colección Nazca Origem.png", desc: "Nutrición extrema y reparación profunda." },
+            { id: "cuidado-diario", nombre: "CUIDADO DIARIO", img: "Colección Nevada _Nazca Origem-1kg.jpg", desc: "Mantenimiento esencial para un cabello radiante." },
+            { id: "crema-desrizadora-o-alisadora", nombre: "CREMA DESRIZADORA", img: "1777016240219.png", desc: "Kit de alisado para un cabello liso y suave." }
+        ];
+
+        const productos = [
+            { id: 1, col_id: "skala-experto", nombre: "Skala Moranco", precio: "$3500 CUP", img: "Skala Moranco.jpg", detalle: `Skala Frutástica Morango (1kg). Crema vegana y multifuncional diseñada para transformar cabellos secos y con frizz. Aporta brillo espejo y suavidad extrema.` },
+            { id: 2, col_id: "skala-experto", nombre: "Skala Melancia", precio: "$3500 CUP", img: "Skala Melancia.jpg", detalle: `Etapa de Nutrición. Ultra definición de hasta 72 horas para rizos. Aceite de sandía y argán.` },
+            { id: 4, col_id: "skala-experto", nombre: "Skala Coquetel de Frutas", precio: "$3500 CUP", img: "Skala Coquetel de Frutas.jpg", detalle: `Hidratación familiar con agua de coco y piña. Ideal para desenredar sin tirones.` },
+            { id: 10, col_id: "cuidado-diario", nombre: "Nazca Origem Onduladas", precio: "$3500 CUP", img: "Nazca Origem-1kg.jpg", detalle: `Definición ligera para ondas naturales. Con aceites de Coco, Karité y Argán.` },
+            { id: 11, col_id: "cuidado-diario", nombre: "Nevada S.O.S", precio: "$3500 CUP", img: "Nevada S.O.S.jpg", detalle: `Biotina y café para frenar la caída y estimular el crecimiento saludable.` },
+            { id: 13, col_id: "crema-desrizadora-o-alisadora", nombre: "Nevada Relaxer", precio: "$1400 CUP", img: "Derriz Nevada1.png", detalle: `Kit de desrizado profesional enriquecido con Vitamina E para un liso perfecto.` }
+        ];
+
+        const contenedor = document.getElementById('contenedor-principal');
+        const titulo = document.getElementById('seccion-titulo');
+        const btnRegresar = document.getElementById('btn-regresar');
+
+        function mostrarColecciones() {
+            btnRegresar.style.display = 'none';
+            titulo.innerText = "Nuestras Líneas";
+            contenedor.innerHTML = colecciones.map(c => `
+                <div class="col" onclick="verColeccion('${c.id}')" data-aos="fade-up">
+                    <div class="card col-card shadow-sm">
+                        <div class="img-wrapper"><img src="static/${c.img}" class="col-img"></div>
+                        <div class="card-body text-center">
+                            <h6 class="col-title small fw-bold">${c.nombre}</h6>
+                            <p class="text-muted small">${c.desc}</p>
+                            <button class="btn btn-beauty w-100 mt-2">Explorar</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function verColeccion(idCol) {
+            const items = productos.filter(p => p.col_id === idCol);
+            const col = colecciones.find(c => c.id === idCol);
+            btnRegresar.style.display = 'block';
+            titulo.innerText = col.nombre;
+            contenedor.innerHTML = items.map(p => `
+                <div class="col" data-aos="zoom-in">
+                    <div class="card col-card shadow-sm" onclick="verDetalle(${p.id})">
+                        <div class="img-wrapper"><img src="static/${p.img}" class="col-img"></div>
+                        <div class="card-body text-center">
+                            <h6 class="small">${p.nombre}</h6>
+                            <p class="precio-tag">${p.precio}</p>
+                            <button class="btn btn-beauty w-100">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            window.scrollTo(0,0);
+        }
+
+        function verDetalle(idProd) {
+            const p = productos.find(x => x.id === idProd);
+            document.getElementById('modal-body-content').innerHTML = `
+                <div style="background:white; padding:15px; border-radius:15px;" class="mb-3">
+                    <img src="static/${p.img}" class="img-fluid" style="max-height:250px">
+                </div>
+                <h4 class="fw-bold">${p.nombre}</h4>
+                <h3 class="precio-tag my-3">${p.precio}</h3>
+                <p class="small text-muted" style="white-space:pre-wrap">${p.detalle}</p>
+                <a href="https://wa.me/5363699206?text=Hola Wendy Hair! Me interesa: ${p.nombre}" class="btn btn-beauty w-100 py-3 mt-3">Comprar por WhatsApp</a>
+            `;
+            new bootstrap.Modal(document.getElementById('modalProducto')).show();
+        }
+
+        // Buscador
+        document.getElementById('buscador').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            if(term.length > 0) {
+                const filtrados = productos.filter(p => p.nombre.toLowerCase().includes(term));
+                titulo.innerText = "Resultados de búsqueda";
+                btnRegresar.style.display = 'block';
+                contenedor.innerHTML = filtrados.map(p => `
+                    <div class="col"><div class="card col-card p-3" onclick="verDetalle(${p.id})">
+                        <img src="static/${p.img}" class="img-fluid mb-2" style="height:150px; object-fit:contain">
+                        <h6 class="small text-center">${p.nombre}</h6>
+                        <p class="precio-tag text-center small">${p.precio}</p>
+                    </div></div>
+                `).join('');
+            } else { mostrarColecciones(); }
+        });
+
+        window.addEventListener("load", () => {
+            setTimeout(() => document.getElementById("loader-wrapper").classList.add("loader-hidden"), 800);
+            mostrarColecciones();
+            AOS.init({ duration: 800, once: true });
+        });
+    </script>
+</body>
+</html>
