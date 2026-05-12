@@ -28,6 +28,11 @@
         .precio-tag { color: var(--beauty-gold); font-weight: 700; font-size: 1.2rem; }
         .modal-content { background-color: var(--beauty-cream); border-radius: 20px; border: 1px solid var(--beauty-gold); }
         .back-btn { cursor: pointer; color: var(--beauty-gold); font-weight: 600; display: none; margin-bottom: 20px; }
+        
+        /* Nuevos estilos para el indicador de disponibilidad */
+        .badge-disponible { position: absolute; top: 12px; right: 12px; background: rgba(40, 167, 69, 0.1); color: #28a745; border: 1px solid rgba(40, 167, 69, 0.3); padding: 4px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; z-index: 2; }
+        .status-disponible { color: #28a745; font-size: 0.85rem; font-weight: 600; margin-bottom: 10px; display: inline-flex; align-items: center; gap: 6px; background: rgba(40, 167, 69, 0.08); padding: 5px 15px; border-radius: 20px; border: 1px solid rgba(40, 167, 69, 0.2); }
+        .status-disponible::before { content: ''; width: 8px; height: 8px; background-color: #28a745; border-radius: 50%; box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); }
     </style>
 </head>
 <body>
@@ -107,7 +112,9 @@
             titulo.innerText = col.nombre;
             contenedor.innerHTML = items.map(p => `
                 <div class="col" data-aos="zoom-in">
-                    <div class="card col-card shadow-sm" onclick="verDetalle(${p.id})">
+                    <!-- Se añadió class position-relative y el span badge-disponible -->
+                    <div class="card col-card shadow-sm position-relative" onclick="verDetalle(${p.id})">
+                        <span class="badge-disponible">Disponible</span>
                         <div class="img-wrapper"><img src="static/${p.img}" class="col-img"></div>
                         <div class="card-body text-center">
                             <h6 class="small">${p.nombre}</h6>
@@ -126,6 +133,8 @@
                 <div style="background:white; padding:15px; border-radius:15px;" class="mb-3">
                     <img src="static/${p.img}" class="img-fluid" style="max-height:250px">
                 </div>
+                <!-- Se añadió el indicador de estado aquí -->
+                <div class="status-disponible">Stock Disponible</div>
                 <h4 class="fw-bold">${p.nombre}</h4>
                 <h3 class="precio-tag my-3">${p.precio}</h3>
                 <p class="small text-muted" style="white-space:pre-wrap">${p.detalle}</p>
@@ -142,11 +151,15 @@
                 titulo.innerText = "Resultados de búsqueda";
                 btnRegresar.style.display = 'block';
                 contenedor.innerHTML = filtrados.map(p => `
-                    <div class="col"><div class="card col-card p-3" onclick="verDetalle(${p.id})">
-                        <img src="static/${p.img}" class="img-fluid mb-2" style="height:150px; object-fit:contain">
-                        <h6 class="small text-center">${p.nombre}</h6>
-                        <p class="precio-tag text-center small">${p.precio}</p>
-                    </div></div>
+                    <div class="col">
+                        <!-- Se añadió class position-relative y el span badge-disponible en el buscador -->
+                        <div class="card col-card p-3 position-relative" onclick="verDetalle(${p.id})">
+                            <span class="badge-disponible">Disponible</span>
+                            <img src="static/${p.img}" class="img-fluid mb-2" style="height:150px; object-fit:contain">
+                            <h6 class="small text-center">${p.nombre}</h6>
+                            <p class="precio-tag text-center small">${p.precio}</p>
+                        </div>
+                    </div>
                 `).join('');
             } else { mostrarColecciones(); }
         });
